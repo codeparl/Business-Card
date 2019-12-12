@@ -124,13 +124,7 @@ constructor(props){
 
     let element =
     (<div className={this.props.name} style={styles}>
-      <ContactsWrapper
-       address = {this.props.address}
-       tel = {this.props.tel}
-       phone = {this.props.phone}
-       email = {this.props.email}
-       website = {this.props.website}
-        />
+      <ContactsWrapper  {...this.props}/>
       </div>);
     return element;
   }
@@ -192,13 +186,7 @@ position:"relative"
      };
     let element = (<div className={this.props.name} style={styles}><CardInfo name="CardInfo" />
 
-    <Contacts name="Contacts"
-        address = {this.props.address}
-        tel = {this.props.tel}
-        phone = {this.props.phone}
-        email = {this.props.email}
-        website = {this.props.website}
-      />
+    <Contacts name="Contacts"  {...this.props}/>
      </div>);
     return element;
   }
@@ -222,13 +210,7 @@ backgroundColor:"blue",
 padding:0
 };
     let element = (<div className={this.props.name} style={styles}>
-      <InnerWapper name="InnerWapper"
-          address = {this.props.address}
-          tel = {this.props.tel}
-          phone = {this.props.phone}
-          email = {this.props.email}
-          website = {this.props.website}
-        />
+      <InnerWapper name="InnerWapper" {...this.props}/>
        </div>);
     return element;
   }
@@ -252,24 +234,14 @@ constructor(props){
  position:"relative"
      };
     let element = (<div className={this.props.name} style={styles}>
-      <Details name="Details"
-          address = {this.props.address}
-          tel = {this.props.tel}
-          phone = {this.props.phone}
-          email = {this.props.email}
-          website = {this.props.website}
+      <Details name="Details" {...this.props}
+
        /></div>);
     return element;
   }
 }//end class
 
-var items  = ['1','2','3'];
 
-function  print(a,b,c){
-  console.log(a+ ' '+b+' '+c);
-}
-
-print(...items);
 //output the business card
 ReactDOM.render(<Card name="Card" address="South-B Nairobi - Kenya"    phone = "+25495372467" tel="254208000976"  email="cybarox@gmail.com" website="www.services.codeparl.com"/>,
 document.querySelector(".cards"));
